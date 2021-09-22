@@ -17,7 +17,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.TOKEN }}
-          external_repository: pradow/countrinfo
+          external_repository: pradow/countrynfo
           publish_dir: ./public
           user_name: pradow
           user_email: pradochris+pradow@protonmail.com
