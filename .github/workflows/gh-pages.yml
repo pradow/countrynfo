@@ -18,7 +18,7 @@ jobs:
         with:
           personal_token: ${{ secrets.TOKEN }}
           external_repository: pradow/countrynfo
-          publish_dir: ./public
+          publish_dir: ./build
           user_name: pradow
           user_email: pradochris+pradow@protonmail.com
           publish_branch: gh-pages
