@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "../shared/useQuery";
-const url = "https://restcountries.eu/rest/v2/name/";
+const url = "https://restcountries.com/v2/name/";
 
 export function SearchResults() {
   const [isLoading, setIsLoading] = useState(true);
