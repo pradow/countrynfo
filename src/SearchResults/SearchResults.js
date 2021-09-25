@@ -26,7 +26,7 @@ export function SearchResults() {
   const handleClick = (e) => {
     const countryCode = e.currentTarget.dataset.country;
 
-    history.push(`/country?code=${countryCode}`);
+    history.push(`/country?alpha=${countryCode}`);
   };
 
   useEffect(() => {
