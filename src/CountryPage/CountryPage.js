@@ -34,7 +34,7 @@ export function CountryPage() {
     );
   }
 
-  if (searchData) {
+  if (searchData.length || Object.keys(searchData).length) {
     return (
       <div className="country-page">
         <div className="container">
@@ -50,13 +50,40 @@ export function CountryPage() {
               <h4 className="country-name">{searchData.name}</h4>
             </div>
             <div className="country-info">
-              <table class="table-fill">
-                <tbody class="table-hover">
+              <table className="table-fill">
+                <tbody className="table-hover">
                   {Object.keys(searchData).map((key) => {
                     return (
-                      <tr>
-                        <td class="text-left">key</td>
-                        <td class="text-left">value</td>
+                      <tr key={`${key}${searchData[key]}`}>
+                        <td className="text-left">{key}</td>
+                        <td className="text-left">
+                          {Array.isArray(searchData[key])
+                            ? searchData[key].map((item) => {
+                                const itemVal =
+                                  item instanceof Object ? (
+                                    Object.keys(item).map((items) => {
+                                      return (
+                                        <div key={items}>
+                                          {items}: {item[items]}
+                                        </div>
+                                      );
+                                    })
+                                  ) : (
+                                    <div key={item}>{item}</div>
+                                  );
+
+                                return itemVal;
+                              })
+                            : searchData[key] instanceof Object
+                            ? Object.keys(searchData[key]).map((el) => {
+                                return (
+                                  <div key={el}>
+                                    {el}: {searchData[key][el]}
+                                  </div>
+                                );
+                              })
+                            : searchData[key].toString()}
+                        </td>
                       </tr>
                     );
                   })}
