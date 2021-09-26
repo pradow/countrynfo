@@ -3,7 +3,8 @@
 }
 
 .country-side-bar {
-  max-width: 40%;
+  flex-shrink: 0;
+  width: 40%;
 }
 
 .country-flag-image {
