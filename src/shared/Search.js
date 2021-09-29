@@ -13,6 +13,8 @@ function Search({ placeholder }) {
     }
 
     history.push(`/search?q=${inputValue.replace(/ /g, "+")}`);
+
+    setInputValue("");
   };
   const handleInputChange = (e) => {
     console.log(e.currentTarget.value);
