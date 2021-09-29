@@ -35,7 +35,7 @@ function Search({ placeholder }) {
         required
       />
       <button className="submit-button" type="submit">
-        Search
+        <span className="button-text">search</span>
       </button>
     </form>
   );
